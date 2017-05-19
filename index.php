@@ -23,9 +23,13 @@ spl_autoload_register('\\Core\\Loader::load');
 //$result = $mysql->query('show tables;');
 //var_dump($result);
 
-if(isset($_GET['female'])){
-    $strategy = new \Core\Strategy\MaleUserStrategy();
-}else{
-    $strategy = new \Core\Strategy\FemaleUserStrategy();
-}
-\App\Controller\Home\Index::ad($strategy);
+//if(isset($_GET['female'])){
+//    $strategy = new \Core\Strategy\MaleUserStrategy();
+//}else{
+//    $strategy = new \Core\Strategy\FemaleUserStrategy();
+//}
+//\App\Controller\Home\Index::ad($strategy);
+
+$event = new \Core\Event();
+$event->addObserver(new \Core\Observer());
+$event->trigger();
