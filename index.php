@@ -30,6 +30,9 @@ spl_autoload_register('\\Core\\Loader::load');
 //}
 //\App\Controller\Home\Index::ad($strategy);
 
-$event = new \Core\Event();
-$event->addObserver(new \Core\Observer());
-$event->trigger();
+//$event = new \Core\Event();
+//$event->addObserver(new \Core\Observer());
+//$event->trigger();
+
+$config = new \Core\Config(__DIR__ . '/configs/');
+var_dump($config['databases']);
